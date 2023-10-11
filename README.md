@@ -8,19 +8,19 @@ UniTrain is an open-source, unified platform for effortless machine learning mod
 ### Install **torch** library using:  
 ```pip install torch```    
 
-**Note** : You can use your local device or any online notebooks like *Google Colab* or *Kagle* for training the models, as explained below.<br>
-However,using 'Google Colab' would be preferred because of its simple user-friendly interface and the computing power that it brings with itself.
+**Note**: You can use your local device or any online notebooks like *Google Colab* or *Kagle* for training the models, as explained below.<br>
+However, using 'Google Colab' would be preferred because of its simple user-friendly interface and the computing power that it brings with itself.
 
 **Note**: For *Google Colab* use "!" before every command.  
 
 
 ## Training  
 ### Classification  
-**Adding Data for Training**    
-- Create a "data" folder within a "content" folder.  
-- The "data" folder will contain three different folders named "train", "test" and "eval" used for training, testing, and evaluation purposes.  
-- Each of the "train", "test" and "eval" folders contains data sets of different categories on which you want to use your model
-- Data folder structure content->data->(train, test, eval)->(category1, category2, category3, .....)
+**Adding Data for Training**  
+- Create a 'data' folder within a 'content' folder.  
+- The 'data' folder will contain three different folders named 'train', 'test', and 'eval' used for training, testing, and evaluation purposes.  
+- Each of the 'train', 'test', and 'eval' folders contain data sets of different categories on which you want to use your model  
+- Data folder structure 'content'->'data'->('train', 'test', 'eval')->(category1, category2, category3, .....)
     
 **Training the model**
 - Run the following code to train your model and you can change the default arguments with your custom arguments  
@@ -43,12 +43,12 @@ if parse_folder("/content/data/"):
               num_epochs=10, learning_rate=1e-3, checkpoint_dir='checkpoints',logger = "training.log", device=torch.device('cuda'))
 ```
 
-## Segmentation  
+### Segmentation  
 **Adding Data for Training**  
-- Create a "data" folder within a "content" folder.  
-- The "data" folder will contain three different folders named "train", "test" and "eval" used for training, testing, and evaluation purposes.  
-- Each of the "train", "test" and "eval" folders contains data sets of different categories on which you want to use your model  
-- Data folder structure content->data->(train, test, eval)->(category1, category2, category3, .....)
+- Create a 'data' folder within a 'content' folder.  
+- The 'data' folder will contain three different folders named 'train', 'test', and 'eval' used for training, testing, and evaluation purposes.  
+- Each of the 'train', 'test', and 'eval' folders contain data sets of different categories on which you want to use your model  
+- Data folder structure 'content'->'data'->('train', 'test', 'eval')->(category1, category2, category3, .....)
     
 **Training the model**  
 - Run the following code to train your model and you can change the default arguments with your custom arguments  
@@ -83,7 +83,7 @@ if parse_folder("/content/data/"):
 ```
 import UniTrain
 from UniTrain.utils.DCGAN import parse_folder, get_data_loader, train_model
-from UniTrain.models.DCGAN import disc , gen
+from UniTrain.models.DCGAN import disc, gen
 import glob
 import torch
 
