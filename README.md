@@ -48,7 +48,8 @@ if parse_folder("/content/data/"):
 - Create a "data" folder within a "content" folder.  
 - The "data" folder will contain three different folders named "train", "test" and "eval" used for training, testing, and evaluation purposes.  
 - Each of the "train", "test" and "eval" folders contains data sets of different categories on which you want to use your model  
-- Data folder structure content->data->(train, test, eval)->(category1, category2, category3, .....)  
+- Data folder structure content->data->(train, test, eval)->(category1, category2, category3, .....)
+    
 **Training the model**  
 - Run the following code to train your model and you can change the default arguments with your custom arguments  
 
