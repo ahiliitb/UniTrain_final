@@ -73,31 +73,15 @@ if parse_folder(data_dir):
     test_image_paths = glob.glob(os.path.join(test_path, "images", "*.jpg"))
     test_mask_paths = glob.glob(os.path.join(test_path, "masks", "*.png"))
     
-    train_data_loader = get_data_loader(image_paths=train_image_paths, 
-                                        mask_paths=train_mask_paths,
-                                        batch_size=32,
-                                        shuffle=True, transform=None)
-    
-    test_data_loader = get_data_loader(image_paths=test_image_paths, 
-                                        mask_paths=test_mask_paths,
-                                        batch_size=32,
-                                        shuffle=True, transform=None)    
+    train_data_loader = get_data_loader(image_paths=train_image_paths, mask_paths=train_mask_paths, batch_size=32, shuffle=True, transform=None)
+    test_data_loader = get_data_loader(image_paths=test_image_paths, mask_paths=test_mask_paths, batch_size=32, shuffle=True, transform=None)
+
     model = UNet(n_class=20)
     model.to(torch.device('cuda'))
     
     generate_model_summary(model=model, input_size=(3, 512, 512))
     
-    train_unet(
-        model,
-        train_data_loader,
-        test_data_loader,
-        num_epochs=10,
-        learning_rate=1e-3,
-        checkpoint_dir='checkpoints',
-        logger="training.log",
-        iou=False,
-        device=torch.device('cuda')
-    )
+    train_unet( model, train_data_loader, test_data_loader, num_epochs=10, learning_rate=1e-3, checkpoint_dir='checkpoints', logger="training.log",iou=False, device=torch.device('cuda'))
 ```
 
 ### DCGAN
@@ -126,15 +110,3 @@ if parse_folder('data'):
     generator_model = gen.generator
     train_model( discriminator_model, generator_model, train_dataloader, batch_size = 128 ,  num_epochs = 25, learning_rate = 1e-3, torch.device('cpu'),checkpoint_dir='checkpoints')
 ```
-
-
- 
-
-
-
-
-
-  
-
-
-`  
